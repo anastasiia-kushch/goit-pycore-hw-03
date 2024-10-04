@@ -10,8 +10,8 @@ def args_check(min, max, quantity):
     if max > 1000:
         raise Exception('Max must not exceed 1000.')
     
-    if quantity >= max:
-        raise Exception('Quantity must be between min and max.')
+    if quantity >= max - min:
+        raise Exception('Quantity must be less than the difference between max and min.')
 
 
 def get_numbers_ticket(min, max, quantity):
@@ -29,4 +29,4 @@ def get_numbers_ticket(min, max, quantity):
     return sorted(list_of_numbers)
 
 
-print(get_numbers_ticket(0, 100, 4))
+print(get_numbers_ticket(5, 8, 2))

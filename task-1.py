@@ -14,5 +14,5 @@ def get_days_from_today(date):
     delta = (current_date - date_obj.date()).days
     return delta
 
-# print(get_days_from_today("2021-10-09"))
+print(get_days_from_today("2021-10-09"))
 # print(get_days_from_today("2021/10/09"))

@@ -1,6 +1,15 @@
 import random
 
 def args_check(min, max, quantity):
+    '''
+    Validates the input parameters for generating the lottery ticket.
+
+    Raises:
+    Exception: if min, max, and quantity are negative.
+    Exception: if min is less than 1.
+    Exception: if max is more than 1000.
+    Exception: if quantity is more than difference between min and max.
+    '''
     if min < 0 or max < 0 or quantity < 0:
         raise Exception ("Min, max, and quantity must not be negative.")
 
@@ -14,7 +23,22 @@ def args_check(min, max, quantity):
         raise Exception('Quantity must be less than the difference between max and min.')
 
 
-def get_numbers_ticket(min, max, quantity):
+def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
+
+    '''
+    Generates a set of unique random numbers for a lottery ticket.
+    
+    Parameters:
+    min (int): the minimum possible number in the set (at least 1).
+    max (int): the maximum possible number in the set (no more than 1000).
+    quantity (int): the number of numbers to be selected (value between min and max).
+
+    Returns:
+    list: a sorted list of unique, randomly selected numbers.
+
+    Raises:
+    Exception: if any of the conditions regarding min, max, and quantity are violated.
+    '''
 
     args_check(min, max, quantity)
     

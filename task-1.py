@@ -1,6 +1,20 @@
 from datetime import datetime
 
-def get_days_from_today(date):
+def get_days_from_today(date: str) -> int:
+
+    '''
+    Calculates the number of days between today's date and the given date.
+    
+    Parameters:
+    date (str): the date in 'YYYY-MM-DD' format.
+
+    Returns:
+    int: the number of days between today and the provided date.
+
+    Raises:
+    ValueError: if the input is not a string or if the date format is incorrect.
+ 
+    '''
 
     if type(date) != str:
         raise ValueError("Incorrect data type. Date should be string")
